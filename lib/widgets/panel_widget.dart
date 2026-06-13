@@ -26,7 +26,17 @@ class PanelWidget extends StatelessWidget {
     return Container(
       width: panelWidth,
       height: panelHeight,
-      decoration: BoxDecoration(border: Border.all(color: panelBorderColour)),
+      decoration: BoxDecoration(
+        border: Border.all(color: panelBorderColour),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.5),
+            spreadRadius: 6,
+            blurRadius: 6,
+            offset: const Offset(20, 20),
+          ),
+        ],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

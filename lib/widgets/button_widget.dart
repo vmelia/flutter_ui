@@ -23,26 +23,13 @@ class ButtonWidget extends StatelessWidget {
         children: [
           Positioned(
             right: 0,
-            child: _ButtonWidgetView(label: label, iconData: iconData, onPressed: onPressed),
+            child: FloatingActionButton(
+              onPressed: onPressed,
+              child: Icon(iconData, color: iconColour),
+            ),
           ),
         ],
       ),
-    );
-  }
-}
-
-class _ButtonWidgetView extends StatelessWidget {
-  const _ButtonWidgetView({required this.label, required this.iconData, required this.onPressed});
-
-  final String label;
-  final IconData iconData;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: onPressed,
-      child: Icon(iconData, color: iconColour),
     );
   }
 }

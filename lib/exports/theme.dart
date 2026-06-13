@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 final Color mainBackgroundColour = Colors.grey[700]!;
-const double panelSpacing = 22.0;
-const EdgeInsets mainPadding = EdgeInsets.all(22.0);
+const double panelSpacing = 40.0;
+const EdgeInsets mainPadding = EdgeInsets.all(panelSpacing);
 
 const double panelWidth = 300.0;
 const double panelHeight = 400.0;
