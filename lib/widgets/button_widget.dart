@@ -17,16 +17,13 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: panelBodyColour,
-      padding: buttonPadding,
+      padding: componentPadding,
       child: Stack(
-        alignment: Alignment.center,
         children: [
-          Positioned(
-            right: 0,
-            child: FloatingActionButton(
-              onPressed: onPressed,
-              child: Icon(iconData, color: iconColour),
-            ),
+          FloatingActionButton(
+            onPressed: onPressed,
+            backgroundColor: panelHeaderColour,
+            child: Icon(iconData, color: iconColour),
           ),
         ],
       ),

@@ -23,46 +23,37 @@ class PanelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final iconData = onPressed != null ? iconDataEnabled : iconDataDisabled;
-    return Container(
-      width: panelWidth,
-      height: panelHeight,
-      decoration: BoxDecoration(
-        border: Border.all(color: panelBorderColour),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.5),
-            spreadRadius: 6,
-            blurRadius: 6,
-            offset: const Offset(20, 20),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Flexible(
-            fit: FlexFit.tight,
-            child: TextWidget(
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: panelBorderColour),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.3),
+              spreadRadius: 6,
+              blurRadius: 6,
+              offset: const Offset(8, 8),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextWidget(
               text: title,
               backgroundColour: panelHeaderColour,
               textAlign: TextAlign.center,
             ),
-          ),
-          Flexible(
-            fit: FlexFit.tight,
-            flex: 4,
-            child: TextWidget(
-              text: text,
-              backgroundColour: panelBodyColour,
-              textAlign: TextAlign.left,
+            Expanded(
+              child: TextWidget(
+                text: text,
+                backgroundColour: panelBodyColour,
+                textAlign: TextAlign.left,
+              ),
             ),
-          ),
-          Flexible(
-            fit: FlexFit.tight,
-            flex: 2,
-            child: ButtonWidget(label: label, iconData: iconData, onPressed: onPressed!),
-          ),
-        ],
+            ButtonWidget(label: label, iconData: iconData, onPressed: onPressed!),
+          ],
+        ),
       ),
     );
   }

@@ -16,7 +16,7 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: textPadding,
+      padding: componentPadding,
       color: backgroundColour,
       child: Text(
         text,

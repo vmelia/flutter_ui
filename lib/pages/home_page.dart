@@ -10,9 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: mainPadding,
-      child: Wrap(
-        spacing: panelSpacing,
-        runSpacing: panelSpacing,
+      child: Column(
         children: [
           PanelWidget(
             title: 'Panel title 1',
@@ -21,6 +19,9 @@ class HomePage extends StatelessWidget {
             iconDataDisabled: Icons.mic_off,
             label: 'Panel 1 button',
             onPressed: () {},
+          ),
+          Container(
+            height: panelSpacing,
           ),
           PanelWidget(
             title: 'Panel title 2',
